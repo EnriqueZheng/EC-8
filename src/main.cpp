@@ -1,6 +1,6 @@
 #include <iostream>
-
 #include "../include/Expenses.h"
+using namespace std;
 
 int main() {
     ExpenseList expenses{
@@ -18,14 +18,14 @@ int main() {
     ExportFunction csv = make_exporter<CsvExporter>();
     ExportFunction json = make_exporter<JsonExporter>();
 
-    std::cout << "=== CSV ===\n" << csv(expenses);
-    std::cout << "\n=== JSON ===\n" << json(expenses);
+    cout << "=== CSV ===\n" << csv(expenses);
+    cout << "\n=== JSON ===\n" << json(expenses);
     auto decorated =
         AuditedExporter{
             SummaryExporter{
                 TextExporter{}}};
 
-    std::cout << "\n=== TEXT + summary + audit ===\n"
+    cout << "\n=== TEXT + summary + audit ===\n"
               << decorated.export_expenses(expenses);
 
     return 0;
