@@ -11,7 +11,7 @@ add_executable(expenses_app
 target_include_directories(expenses_app PRIVATE include)
 
 add_executable(expenses_tests
-        tests/test_expenses.cpp
+        tests/expenses_tests.cpp
 )
 target_include_directories(expenses_tests PRIVATE include)
 
