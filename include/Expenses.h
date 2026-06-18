@@ -69,9 +69,9 @@ struct JsonExporter {
         for (std::size_t i = 0; i < expenses.size(); ++i) {
             const auto& e = expenses[i];
             out += "  {";
-            out += "\"date\": \"" + e.date + "\", ";
-            out += "\"category\": \"" + e.category + "\", ";
-            out += "\"detail\": \"" + e.detail + "\", ";
+            out += R"("date": ")" + e.date + "\", ";
+            out += R"("category": ")" + e.category + "\", ";
+            out += R"("detail": ")" + e.detail + "\", ";
             out += "\"amount\": " + format_amount(e.amount);
             out += "}";
             if (i + 1 < expenses.size()) out += ",";
